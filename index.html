@@ -46,11 +46,12 @@
 		}
 
 		.elemento {
-			width: 49.2vw;
+			width: 50%;
 			height: 50vh;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			border: none;
 		}
 		.portafolio .elemento {
 			height: 40vh;
@@ -118,9 +119,10 @@
 		}
 		.elemento img {
 			border: none;
+			width: 40%;
 		}
 		.coleccion {
-			width: 98.72vw;
+			min-width: 98vw;
 		    display: flex;
 		    flex-flow: row wrap;
 		}
@@ -136,9 +138,12 @@
 @media (max-aspect-ratio: 16/9) {
   .video-foreground { width: 300%; left: -100%; }
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
 	.video-foreground {
 		padding-bottom: 10%;
+	}
+	.elemento {
+		width: 49vw;
 	}
 }
 
