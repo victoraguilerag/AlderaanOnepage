@@ -28,27 +28,25 @@
 		body {
 			width: 100%;
 			height: 100vh;
-			font-family: "Josefin Sans"
+			font-family: "Josefin Sans";
+			overflow-x: hidden !important;
 		}
 		body * {
 			border: thin solid rgba(100,100,100,1);
 		}
 		.hero {
-			width: 100%;
+			width: 98.72vw;
 			height: 100vh;
 			overflow-x: hidden;
 			overflow-y: hidden;
 			position: relative;
 		}
-		.indice, .portafolio{
+		.portafolio{
 			border: none;
-			width: 100%;
-			height: auto;
-			display: flex;
-			flex-flow: row nowrap;
 		}
+
 		.elemento {
-			width: 100%;
+			width: 49.2vw;
 			height: 50vh;
 			display: flex;
 			justify-content: center;
@@ -61,7 +59,7 @@
 			border: none;
 		}
 		.bandera {
-			width: 100%;
+			width: 98.72vw;
 			height: 20vh;
 			display: flex;
 			justify-content: center;
@@ -110,10 +108,41 @@
 		  width: 100%;
 		  height: 100%;
 		  pointer-events: none;
+		  padding-bottom: 5%;
 		}
+
+		.elemento {
+			background: url("fondo.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+		.elemento img {
+			border: none;
+		}
+		.coleccion {
+			width: 98.72vw;
+		    display: flex;
+		    flex-flow: row wrap;
+		}
+		.indice {
+			display: inline-flex;
+		}
+		.contenedor {
+			width: 98.72vw;
+			overflow-x: hidden;
+		}
+
+		
 @media (max-aspect-ratio: 16/9) {
   .video-foreground { width: 300%; left: -100%; }
 }
+@media (max-width: 500px) {
+	.video-foreground {
+		padding-bottom: 10%;
+	}
+}
+
+
 	</style>
 </head>
 <body>
@@ -122,36 +151,78 @@
 
 	  <div class="video-background">
 	    <div class="video-foreground">
-	      <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" autoplay="1" frameborder="0" autohide="0" modestbranding="1" rel="0" showinfo="0" controls="0" allowfullscreen></iframe>
+	      <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" autohide="0" modestbranding="1" rel="0" showinfo="0" controls="0" allowfullscreen></iframe>
 	    </div>
 	  </div>
 	</div>
-	<div class="indice">
-		<div class="elemento">
-			<p>A</p>
-		</div>
-		<div class="elemento">
-			<p>A</p>
+	<div class="contenedor">
+		<div class="indice">
+			<div class="coleccion">
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+			</div>
+			<div class="coleccion">
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+			</div>			
 		</div>
 	</div>
-	<div class="indice">
-		<div class="elemento">
-			<p>A</p>
-		</div>
-		<div class="elemento">
-			<p>A</p>
-		</div>
-	</div>
+	
+
 	<div class="bandera">
 		<h2>Websites</h2>
 	</div>
-	<div class="portafolio">
-		<div class="elemento">A</div>
-		<div class="elemento">A</div>
-	</div>
-	<div class="portafolio">
-		<div class="elemento">A</div>
-		<div class="elemento">A</div>
+	<div class="contenedor">
+		<div class="indice portafolio">
+			<div class="coleccion">
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+			</div>
+			<div class="coleccion">
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+				<div class="elemento">
+					<img src="worldwide.svg" alt="">
+				</div>
+			</div>			
+		</div>
 	</div>
 </body>
 </html>
