@@ -35,9 +35,6 @@
 			font-family: "Josefin Sans";
 			overflow-x: hidden !important;
 		}
-		body * {
-			border: thin solid rgba(100,100,100,1);
-		}
 		.hero {
 			width: 98.72vw;
 			height: 100vh;
@@ -45,6 +42,22 @@
 			overflow-y: hidden;
 			position: relative;
 		}
+
+		.contenido {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 10;
+		}
+		.contenido * {
+			border: none;
+		}
+
+
 		.portafolio{
 			border: none;
 		}
@@ -56,9 +69,12 @@
 			justify-content: center;
 			align-items: center;
 			border: none;
+			background-size: cover !important;
 		}
 		.portafolio .elemento {
 			height: 40vh;
+			color: white;
+			font-size: 1.5em;
 		}
 		.elemento p {
 			border: none;
@@ -98,6 +114,10 @@
 			background: rgba(100,200,100,.5);
 			z-index: 4;
 		}
+
+		/* Video Responsive */
+
+
 		.video-background {
 		  background: #000;
 		  position: relative;
@@ -115,15 +135,8 @@
 		  pointer-events: none;
 		  padding-bottom: 5%;
 		}
-
-		.elemento {
-			background: url("fondo.jpg");
-			background-size: cover;
-			background-position: center center;
-		}
 		.elemento img {
 			border: none;
-			width: 40%;
 		}
 		.coleccion {
 			min-width: 100vw;
@@ -138,22 +151,34 @@
 		}
 		.contenedor {
 			max-width: 98vw;
+			width: 98vw;
 			overflow-x: hidden;
 		}
+
+
+		/* Animacion */
+
 		.derecha {
 			transition: all 1s ease-in-out;
-			transform: translateX(-96vh);
+			transform: translateX(-100vw);
 		}
 		.izquierda {
 			transition: all 1s ease-in-out;
-			transform: translateX(-96vh);
+			transform: translateX(-100vw);
 		}
-		.abierto {
-			transform: translateX(-560px);
-		}
-		@keyframes medida {
-			to {transform: translateX(-560px);}
-		}
+
+		/* Fondos */
+
+		#calle { background: url("./assets/calle.jpeg"); background-position: center right; }
+		#laptop { background: url("./assets/laptop.jpeg");  }
+		#notas { background: url("./assets/notas.jpeg"); background-position: bottom right;  }
+		#tablet { background: url("./assets/tablet.jpg"); background-position: right top; }
+
+		#yakman { background: url("./assets/music.jpeg"); background-position: right; }
+		#theater { background: url("./assets/teatro.jpeg"); }
+		#resuin { background: url("./assets/resuin.jpg");  }
+		#cugnier { background: url("./assets/restaurant.jpeg");  }
+		
 
 
 		
@@ -170,6 +195,14 @@
 	.coleccion {
 		min-width: 98vw;
 	}
+	.derecha {
+		transition: all 1s ease-in-out;
+		transform: translateX(-99vw);
+	}
+	.izquierda {
+		transition: all 1s ease-in-out;
+		transform: translateX(-99vw);
+	}
 }
 
 
@@ -177,6 +210,10 @@
 </head>
 <body>
 	<div class="hero">
+	<div class="contenido">
+		<img width="300px" src="worldwide.svg" alt="">
+		<h2>We make awesome websites</h2>
+	</div>
 	<div class="transluz"></div>
 
 	  <div class="video-background">
@@ -188,33 +225,33 @@
 	<div class="contenedor">
 		<div id="indice" class="indice">
 			<div class="coleccion">
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="calle" class="elemento">
+					<img width="30%" src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="laptop" class="elemento">
+					<img width="30%" src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="notas" class="elemento">
+					<img width="30%" src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="tablet" class="elemento">
+					<img width="30%" src="worldwide.svg" alt="">
 				</div>
 			</div>
 			<div class="coleccion">
-				<div class="elemento">
+				<div id="calle" class="elemento">
 					<img src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
+				<div id="laptop" class="elemento">
 					<img src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
+				<div id="notas" class="elemento">
 					<img src="worldwide.svg" alt="">
 				</div>
-				<div class="elemento">
+				<div id="tablet" class="elemento">
 					<img src="worldwide.svg" alt="">
 				</div>
-			</div>			
+			</div>				
 		</div>
 	</div>
 	
@@ -225,33 +262,34 @@
 	<div class="contenedor">
 		<div id="portafolio" class="indice portafolio">
 			<div class="coleccion">
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
 				</div>
 			</div>
 			<div class="coleccion">
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
 				</div>
-				<div class="elemento">
-					<img src="worldwide.svg" alt="">
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
 				</div>
-			</div>			
+			</div>
+		
 		</div>
 	</div>
 	<script>
