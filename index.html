@@ -19,6 +19,10 @@
 	
 	<!-- Font Awesome CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- HammerJS -->
+	<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
 	<style type="text/css">
 		html, body {
 			margin: 0;
@@ -122,17 +126,35 @@
 			width: 40%;
 		}
 		.coleccion {
-			min-width: 98vw;
+			min-width: 100vw;
 		    display: flex;
 		    flex-flow: row wrap;
 		}
 		.indice {
 			display: inline-flex;
-		}
-		.contenedor {
-			width: 98.72vw;
+			transition: all 1s ease-in-out;
+			scroll-behavior: none;
 			overflow-x: hidden;
 		}
+		.contenedor {
+			max-width: 98vw;
+			overflow-x: hidden;
+		}
+		.derecha {
+			transition: all 1s ease-in-out;
+			transform: translateX(-96vh);
+		}
+		.izquierda {
+			transition: all 1s ease-in-out;
+			transform: translateX(-96vh);
+		}
+		.abierto {
+			transform: translateX(-560px);
+		}
+		@keyframes medida {
+			to {transform: translateX(-560px);}
+		}
+
 
 		
 @media (max-aspect-ratio: 16/9) {
@@ -144,6 +166,9 @@
 	}
 	.elemento {
 		width: 49vw;
+	}
+	.coleccion {
+		min-width: 98vw;
 	}
 }
 
@@ -161,7 +186,7 @@
 	  </div>
 	</div>
 	<div class="contenedor">
-		<div class="indice">
+		<div id="indice" class="indice">
 			<div class="coleccion">
 				<div class="elemento">
 					<img src="worldwide.svg" alt="">
@@ -198,7 +223,7 @@
 		<h2>Websites</h2>
 	</div>
 	<div class="contenedor">
-		<div class="indice portafolio">
+		<div id="portafolio" class="indice portafolio">
 			<div class="coleccion">
 				<div class="elemento">
 					<img src="worldwide.svg" alt="">
@@ -229,5 +254,32 @@
 			</div>			
 		</div>
 	</div>
+	<script>
+		var indice = document.getElementById("indice")
+		var gestos = new Hammer(indice)
+		gestos.on("panright", function(ev) {
+			console.log(ev.distance)
+			indice.classList.add("derecha")
+		})
+		gestos.on("panleft", function(ev) {
+			if (indice.classList.contains("derecha")) {
+				indice.classList.remove("derecha")
+			}
+		})
+
+		var portafolio = document.getElementById("portafolio")
+		var gestos2 = new Hammer(portafolio)
+		gestos2.on("panright", function(ev) {
+			console.log(ev.distance)
+			portafolio.classList.add("derecha")
+		})
+		gestos2.on("panleft", function(ev) {
+			console.log(ev.distance)
+			if (portafolio.classList.contains("derecha")) {
+				portafolio.classList.remove("derecha")
+			}
+		})
+
+	</script>
 </body>
 </html>
