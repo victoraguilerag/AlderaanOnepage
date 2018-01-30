@@ -6,7 +6,7 @@
       if (target.length) {
       	console.log(target.offset())
         $('html, body').animate({
-          scrollTop: (target.offset().top + 659)
+          scrollTop: (target.offset().top + 640)
         }, 1000);
         return false;
       }
