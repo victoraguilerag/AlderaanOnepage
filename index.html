@@ -14,6 +14,16 @@
 	<meta property="og:description" content="Alderaan Studio" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+	<!-- jQuery -->
+	<script
+	  src="http://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	
+	<!-- jQuery easing -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
 	<!-- Fuentes Aaron -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
 	
@@ -23,191 +33,8 @@
 	<!-- HammerJS -->
 	<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
-	<style type="text/css">
-		html, body {
-			margin: 0;
-			padding: 0;
-			overflow-x: hidden !important;
-		}
-		body {
-			width: 100%;
-			height: 100vh;
-			font-family: "Josefin Sans";
-			overflow-x: hidden !important;
-		}
-		.hero {
-			width: 100vw;
-			height: 100vh;
-			overflow-x: hidden;
-			overflow-y: hidden;
-			position: relative;
-		}
-
-		.contenido {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
-			align-items: center;
-			z-index: 10;
-		}
-		.contenido * {
-			border: none;
-		}
-		.contenido img {
-			width: 300px;
-		}
-
-
-		.portafolio{
-			border: none;
-		}
-
-		.elemento {
-			width: 50%;
-			height: 50vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border: none;
-			background-size: cover !important;
-		}
-		.portafolio .elemento {
-			height: 40vh;
-			color: white;
-			font-size: 1.5em;
-		}
-		.elemento p {
-			border: none;
-		}
-		.bandera {
-			width: 98.72vw;
-			height: 20vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.bandera h2 {
-			border: none;
-		}
-		.video {
-			position: relative;
-			padding-bottom: 56.25%; /* 16/9 ratio */
-			padding-top: 30px; /* IE6 workaround*/
-			height: 0;
-			overflow: hidden;
-		}
-
-		.video iframe,
-		.video object,
-		.video embed {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-		.transluz {
-			width: 100%;
-			height: 100%;
-			top: 0;
-			position: absolute;
-			background: rgba(100,200,100,.5);
-			z-index: 4;
-		}
-
-		/* Video Responsive */
-
-
-		.video-background {
-		  background: #000;
-		  position: relative;
-		  height: 99.5%;
-		  top: 0; right: 0; bottom: 0; left: 0;
-		  z-index: -99;
-		}
-		.video-foreground,
-		.video-background iframe {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  pointer-events: none;
-		  padding-bottom: 5%;
-		}
-		.elemento img {
-			border: none;
-		}
-		.coleccion {
-			min-width: 100vw;
-		    display: flex;
-		    flex-flow: row wrap;
-		}
-		.indice {
-			display: inline-flex;
-			transition: all 1s ease-in-out;
-			scroll-behavior: none;
-			overflow-x: hidden;
-		}
-		.contenedor {
-			max-width: 100vw;
-			width: 100vw;
-			overflow-x: hidden;
-		}
-
-
-		/* Animacion */
-
-		.derecha {
-			transition: all 1s ease-in-out;
-			transform: translateX(-100vw);
-		}
-		.izquierda {
-			transition: all 1s ease-in-out;
-			transform: translateX(-100vw);
-		}
-
-		/* Fondos */
-
-		#calle { background: url("./assets/calle.jpeg"); background-position: center right; }
-		#laptop { background: url("./assets/laptop.jpeg");  }
-		#notas { background: url("./assets/notas.jpeg"); background-position: bottom right;  }
-		#tablet { background: url("./assets/tablet.jpg"); background-position: right top; }
-
-		#yakman { background: url("./assets/music.jpeg"); background-position: right; }
-		#theater { background: url("./assets/teatro.jpeg"); }
-		#resuin { background: url("./assets/resuin.jpg");  }
-		#cugnier { background: url("./assets/restaurant.jpeg");  }
-		
-
-
-		
-@media (max-aspect-ratio: 16/9) {
-  .video-foreground { width: 300%; left: -100%; }
-}
-@media (max-width: 700px) {
-	.video-foreground {
-		padding-bottom: 10%;
-	}
-	.derecha {
-		transition: all 1s ease-in-out;
-		transform: translateX(-100vw);
-	}
-	.izquierda {
-		transition: all 1s ease-in-out;
-		transform: translateX(-100vw);
-	}
-	.contenido img {
-		width: 200px;
-	}
-
-}
-
-
-	</style>
+	<!-- Hoja de estilos -->
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	<div class="hero">
@@ -226,18 +53,22 @@
 	<div class="contenedor">
 		<div id="indice" class="indice">
 			<div class="coleccion">
-				<div id="calle" class="elemento">
+				<a href="#websites" id="calle" class="elemento js-scroll-trigger">
 					<img width="30%" src="worldwide.svg" alt="">
-				</div>
-				<div id="laptop" class="elemento">
+					Websites
+				</a>
+				<a href="#ecommerce" id="laptop" class="elemento js-scroll-trigger">
 					<img width="30%" src="worldwide.svg" alt="">
-				</div>
-				<div id="notas" class="elemento">
+					Ecommerce
+				</a>
+				<a href="#social" id="notas" class="elemento js-scroll-trigger">
 					<img width="30%" src="worldwide.svg" alt="">
-				</div>
-				<div id="tablet" class="elemento">
+					Social Media
+				</a>
+				<a href="#logo" id="tablet" class="elemento js-scroll-trigger">
 					<img width="30%" src="worldwide.svg" alt="">
-				</div>
+					Logo
+				</a>
 			</div>
 			<div class="coleccion">
 				<div id="calle" class="elemento">
@@ -257,7 +88,7 @@
 	</div>
 	
 
-	<div class="bandera">
+	<div id="websites" class="bandera">
 		<h2>Websites</h2>
 	</div>
 	<div class="contenedor">
@@ -293,6 +124,118 @@
 		
 		</div>
 	</div>
+
+	<div id="ecommerce" class="bandera">
+		<h2>Ecommerce</h2>
+	</div>
+	<div class="contenedor">
+		<div id="portafolio" class="indice portafolio">
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+	<div id="social" class="bandera">
+		<h2>Social Media</h2>
+	</div>
+	<div class="contenedor">
+		<div id="portafolio" class="indice portafolio">
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+	<div id="logo" class="bandera">
+		<h2>Logo</h2>
+	</div>
+	<div class="contenedor">
+		<div id="portafolio" class="indice portafolio">
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+			<div class="coleccion">
+				<div id="yakman" class="elemento">
+					<p>yakman302.com</p>
+				</div>
+				<div id="theater" class="elemento">
+					<p>eiteatro.tk</p>
+				</div>
+				<div id="resuin" class="elemento">
+					<p>resuincausa.com</p>
+				</div>
+				<div id="cugnier" class="elemento">
+					<p>cugnierusa.com</p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
 	<script>
 		var indice = document.getElementById("indice")
 		var gestos = new Hammer(indice)
@@ -320,5 +263,6 @@
 		})
 
 	</script>
+	<script src="utils.js"></script>
 </body>
 </html>
